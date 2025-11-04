@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disease Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body style="background-image:url('https://www.shutterstock.com/image-photo/personal-genomics-personalized-healthcare-wellness-600nw-2504009947.jpg'); background-size: cover; background-repeat: no-repeat;">
+  <header class="site-header text-center py-4">
+    <h1 class="project-title">
+      A Machine Learning Framework for Preliminary Disease Diagnosis<br>
+      <small class="text-muted">from Patient-Reported Symptoms</small>
+    </h1>
+  </header>
+
+  <main>
+    <h2>Select Symptoms</h2>
+    <form id="symptomForm">
+      <div id="symptomList"></div>
+      <button type="submit">Predict</button>
+      <button type="button" id="resetBtn">Reset</button>
+      <a href="/logout" class="btn btn-outline-danger mt-2">Logout</a>
+    </form>
+    <div id="result"></div>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

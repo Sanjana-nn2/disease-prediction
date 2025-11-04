@@ -1,0 +1,151 @@
+/* Page background */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/background.jpg"); /* your background image path */
+  background-size: cover;            /* makes image fill the screen */
+  background-position: center;       /* centers the image */
+  background-repeat: no-repeat;      /* prevents repeating */
+  background-attachment: fixed;      /* makes background stay while scrolling */
+}
+
+/* Header styles */
+header {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.hero-img {
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Main section */
+main {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  background-color: #2b7a78;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #205e5c;
+}
+/* === Buttons and form layout === */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers inside the form */
+  width: 250px;
+  margin: 0 auto;        /* centers the form on the page */
+}
+
+form button,
+form a {
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none;  /* removes underline from Logout */
+  width: 100%;            /* all buttons same width */
+  box-sizing: border-box;
+}
+
+/* Optional: style logout like the other buttons */
+form a {
+  background-color: #d9534f;   /* red tone */
+  color: white;
+  border-radius: 6px;
+  padding: 10px 20px;
+}
+
+form a:hover {
+  background-color: #b52b27;
+}
+/* Style for the symptom form layout */
+#symptomForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  background-color: rgba(248, 248, 252, 0.8);
+  padding: 25px;
+  border-radius: 15px;
+  width: 350px;
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Grid layout for symptoms */
+#symptomList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 10px 20px; /* vertical & horizontal space between checkboxes */
+  text-align: left;
+}
+
+/* Checkbox labels spacing */
+#symptomList label {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Buttons */
+#symptomForm button,
+#symptomForm a {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#symptomForm button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+#symptomForm #resetBtn {
+  background-color: #6c757d;
+  color: white;
+}
+
+#symptomForm a {
+  background-color: #dc3545;
+  color: white;
+  text-decoration: none;
+}
+
+/* Title styling */
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
