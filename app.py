@@ -42,6 +42,11 @@ with open('model/label_map.json') as f:
 
 # ---------------- ROUTES ---------------- #
 
+# 🏠 Homepage route
+@app.route('/')
+def home():
+    return render_template('home.html')  # this will be your new first page
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     users = load_users()
@@ -51,7 +56,7 @@ def login():
 
         if username in users and users[username] == password:
             session['user'] = username
-            return redirect(url_for('index'))
+            return redirect(url_for('predict_page'))
         else:
             return render_template('login.html', error="Invalid username or password")
     return render_template('login.html')
@@ -72,8 +77,9 @@ def logout():
     session.pop('user', None)
     return redirect(url_for('login'))
 
-@app.route('/')
-def index():
+# 🔮 Prediction page (old index.html)
+@app.route('/predict')
+def predict_page():
     if 'user' not in session:
         return redirect(url_for('login'))
     return render_template('index.html')
@@ -85,7 +91,7 @@ def predict():
     age = int(data.get('age', 30))
     gender = data.get('gender', 'M')
 
-    x = [0]*len(cols)
+    x = [0] * len(cols)
     for i, c in enumerate(cols):
         if c == 'age':
             x[i] = age

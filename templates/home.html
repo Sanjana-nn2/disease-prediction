@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disease Prediction Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    /* Page background */
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://previews.123rf.com/images/megaflopp/megaflopp1507/megaflopp150700077/42889798-medicine-doctor-s-working-table-view-from-top-monitor-keyboard-mouse-clipped-pad-with.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* Semi-transparent overlay */
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      text-align: center;
+      padding: 50px;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #00e0ff;
+    }
+
+    h3 {
+      margin-top: 20px;
+      color: #ffcc00;
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-top: 10px;
+      color: #f5f5f5;
+    }
+
+    .btn {
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 25px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #0199ac;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>A Machine Learning Framework for Preliminary Disease Diagnosis<br>from Patient-Reported Symptoms</h1>
+
+    <h3>About Us !!!</h3>
+    <p>
+      The general day-to-day health of a person is vital for efficient functioning of the human body.
+      Using a dataset of symptoms and corresponding diseases, this project leverages
+      machine-learning algorithms to predict possible diseases from user-reported symptoms.
+      Our goal is to assist in early diagnosis and improve awareness of potential health conditions.
+    </p>
+
+    <button class="btn" onclick="window.location.href='/signup'">Get Started</button>
+  </div>
+</body>
+</html>
