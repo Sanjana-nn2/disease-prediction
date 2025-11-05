@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    body {
+      background: linear-gradient(to right, #d7efff, #eaf8ff);
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      max-width: 450px;
+    }
+    h2 {
+      color: #0077b6;
+    }
+    p {
+      color: #555;
+    }
+    .btn {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      border: none;
+      margin: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    .logout {
+      background-color: #dc3545;
+    }
+    .logout:hover {
+      background-color: #a71d2a;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Welcome, {{ username }} 👋</h2>
+    <p>Your personal health assistant is ready.</p>
+    <button class="btn" onclick="window.location.href='/predict'">Start Prediction</button>
+    <button class="btn logout" onclick="window.location.href='/logout'">Logout</button>
+  </div>
+</body>
+</html>

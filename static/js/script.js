@@ -1,4 +1,8 @@
-const symptoms = ['fever','cough','sore_throat','nasal_congestion','headache','body_pain','chills','nausea','vomiting','diarrhea','abdominal_pain','burning_urination','frequent_urination','fatigue','rash','joint_pain','bleeding_gums','retro_orbital_pain'];
+const symptoms = [
+  'fever','cough','sore_throat','nasal_congestion','headache','body_pain','chills',
+  'nausea','vomiting','diarrhea','abdominal_pain','burning_urination',
+  'frequent_urination','fatigue','rash','joint_pain','bleeding_gums','retro_orbital_pain'
+];
 
 const form = document.getElementById('symptomForm');
 const list = document.getElementById('symptomList');
@@ -24,10 +28,15 @@ form.addEventListener('submit', async (e) => {
   });
 
   const json = await res.json();
-  result.innerHTML = `<h3>Predicted Disease: ${json.prediction}</h3>`;
-});
+  const disease = json.prediction;
 
-resetBtn.addEventListener('click', () => {
-  document.querySelectorAll('input[type="checkbox"]').forEach(c => c.checked = false);
-  result.innerHTML = '';
+  // Show prediction with a button to go to tips page
+  result.innerHTML = `
+    <h3>Predicted Disease: ${disease}</h3>
+    <button id="tipsBtn" class="btn">See Health Tips & Precautions</button>
+  `;
+
+  document.getElementById('tipsBtn').addEventListener('click', () => {
+    window.location.href = `/tips/${encodeURIComponent(disease)}`;
+  });
 });

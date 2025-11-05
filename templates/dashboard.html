@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        /* Full-page gradient background */
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+        }
+
+        /* Dashboard card */
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        p {
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            background-color: #fff;
+            color: #2575fc;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background-color: #f1f1f1;
+            color: #6a11cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-card">
+        <h2>Welcome, {{ username }}!</h2>
+        <p>Select symptoms and predict diseases below.</p>
+        <a href="{{ url_for('index') }}">Go to Disease Prediction</a>
+    </div>
+</body>
+</html>
